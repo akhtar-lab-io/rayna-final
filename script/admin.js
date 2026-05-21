@@ -1,5 +1,5 @@
 // Load data orders
-fetch("https://caaabfb4-f4ed-4cc0-9e17-30c26e33be7f-00-2q5idvq68h83h.pike.replit.dev:3000/")
+fetch("https://rayna-backend-update.vercel.app/orders")
   .then(res => res.json())
   .then(data => {
     const tbody = document.querySelector("#orderTable tbody");
@@ -17,7 +17,7 @@ fetch("https://caaabfb4-f4ed-4cc0-9e17-30c26e33be7f-00-2q5idvq68h83h.pike.replit
   });
 
 // Load data user & tombol aksi
-fetch("https://caaabfb4-f4ed-4cc0-9e17-30c26e33be7f-00-2q5idvq68h83h.pike.replit.dev:3000/")
+fetch("https://rayna-backend-update.vercel.app/users")
   .then(res => res.json())
   .then(data => {
     const tbody = document.querySelector("#userTable tbody");
@@ -41,9 +41,9 @@ fetch("https://caaabfb4-f4ed-4cc0-9e17-30c26e33be7f-00-2q5idvq68h83h.pike.replit
   });
 
 function updateStatus(userId, status) {
- fetch("https://caaabfb4-f4ed-4cc0-9e17-30c26e33be7f-00-2q5idvq68h83h.pike.replit.dev:3000/", {${userId}`, {
+  fetch(`https://rayna-backend-update.vercel.app/update-status/${userId}`, {
     method: "PUT",
-    headers: { 
+    headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ status })
